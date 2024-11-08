@@ -1,0 +1,33 @@
+services:
+  db:
+    image: postgres
+    restart: always
+    shm_size: 128mb
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: baseDB
+    ports:
+    - '5432:5432'
+    volumes:
+    - ./postgres/local_pgdata:/var/lib/postgresql/data
+  pgadmin4:
+    image: elestio/pgadmin:latest
+    environment:
+      PGADMIN_DEFAULT_EMAIL: frn.bouda@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_LISTEN_PORT: 8080
+    ports:
+    - '5050:8080'
+    volumes:
+    - ./pgadmin/servers.json:/pgadmin4/servers.json
+  apache:
+    image: httpd:latest
+    container_name: apache
+    ports:
+    - '8080:80'
+    volumes:
+    - ./appache/web:/usr/local/apache2/htdocs
+  backend:
+    build: ../docker_images/backend
+  
