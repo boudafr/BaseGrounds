@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="com.example.ktor-sample" target="20" />
+      <module name="com.example.ktor-sample.main" target="20" />
+      <module name="com.example.ktor-sample.test" target="20" />
+      <module name="com.project.Application" target="20" />
+      <module name="com.project.Application.main" target="20" />
+      <module name="com.project.Application.test" target="20" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

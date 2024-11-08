@@ -1,11 +1,4 @@
 services:
-  apache:
-    image: httpd:latest
-    container_name: apache
-    ports:
-    - '8080:80'
-    volumes:
-    - ./appache/web:/usr/local/apache2/htdocs
   db:
     image: postgres
     restart: always
@@ -28,3 +21,13 @@ services:
     - '5050:8080'
     volumes:
     - ./pgadmin/servers.json:/pgadmin4/servers.json
+  apache:
+    image: httpd:latest
+    container_name: apache
+    ports:
+    - '8080:80'
+    volumes:
+    - ./appache/web:/usr/local/apache2/htdocs
+  backend:
+    build: ../docker_images/backend
+  
