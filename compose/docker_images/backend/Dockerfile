@@ -1,4 +1,6 @@
-FROM chainguard/jdk:latest
+FROM alpine:latest
+
+RUN apk add openjdk21
 
 COPY /backend /backend
 CMD /backend/gradlew build
