@@ -29,7 +29,7 @@ services:
     volumes:
     - ./appache/web:/usr/local/apache2/htdocs
   backend:
-    build: ./docker_images/backend/Dockerfile
+    build: ./docker_images/backend/
     ports:
     - '7070:8080'
   
